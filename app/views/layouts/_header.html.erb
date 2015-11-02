@@ -4,11 +4,15 @@
           <%= link_to 'Ice Cream Cup', root_path, :class => 'navbar-brand' %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <div class="navbar-form navbar-right">
-            <% if user_signed_in? %>
-              
+          <div class="navbar-form navbar-right">            
+            <% if user_signed_in? %>              
               <ul class="nav navbar-nav">
-                <!-- <li role="presentation" style="color:white"><a href="#">Hi <strong><%= current_user.email %></strong></a></li> -->
+                <% if current_user.admin? %>
+                  <li role="presentation"><%= link_to 'Admin', edit_user_registration_path %></li>
+                <% end %>
+                <% if current_user.judge? %>
+                  <li role="presentation"><%= link_to 'Judge', edit_user_registration_path %></li>
+                <% end %>
                 <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path %></li>
                 <li role="presentation"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
               </ul>              
