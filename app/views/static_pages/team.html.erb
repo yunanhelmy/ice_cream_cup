@@ -1,0 +1,30 @@
+
+<% if @teams.empty?  %>
+	<div class="row">
+		<h1>There are no active teams yet</h1>
+	</div>
+<% else %>
+	<div class="row">		
+		<h1>Registered Teams List</h1>
+		<table class='table table-striped'>
+		  <thead>
+		    <tr>
+		      <th>ID</th>
+		      <th>Leader</th>
+		      <th>Score</th>
+		      <th>Cup ID</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <% @teams.each do |team| %>
+		      <tr>
+		        <td><%= team.id %></td>
+		        <td><%= team.leader %></td>
+		        <td><%= team.score %></td>
+		        <td><%= team.cup_id %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+<% end %>

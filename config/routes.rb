@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  get 'user/edit'
+
   get 'static_pages/index'
+  get 'admin_page' => 'static_pages#admin'
+  get 'team_page' => 'static_pages#team'
+
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   # The priority is based upon order of creation: first created -> highest priority.
@@ -15,7 +20,8 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :teams
+    resources :users
 
   # Example resource route with options:
   #   resources :products do

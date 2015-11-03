@@ -1,0 +1,25 @@
+<div class="row">
+	<h1>Registered Users List</h1>
+	<table class='table table-striped'>
+	  <thead>
+	    <tr>
+	      <th>ID</th>
+	      <th>Email</th>
+	      <th>Admin</th>
+	      <th>Judge</th>
+	      <tr>Modify</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <% @users.each do |user| %>
+	      <tr>
+	        <td><%= user.id %></td>
+	        <td><%= user.email %></td>
+	        <td><%= user.admin %></td>
+	        <td><%= user.judge %></td>
+	        <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-large btn-success' %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>

@@ -8,10 +8,10 @@
             <% if user_signed_in? %>              
               <ul class="nav navbar-nav">
                 <% if current_user.admin? %>
-                  <li role="presentation"><%= link_to 'Admin', edit_user_registration_path %></li>
+                  <li role="presentation"><%= link_to 'Admin', admin_page_path %></li>
                 <% end %>
                 <% if current_user.judge? %>
-                  <li role="presentation"><%= link_to 'Judge', edit_user_registration_path %></li>
+                  <li role="presentation"><%= link_to 'Team', team_page_path %></li>
                 <% end %>
                 <li role="presentation"><%= link_to 'Edit profile', edit_user_registration_path %></li>
                 <li role="presentation"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
