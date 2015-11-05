@@ -1,5 +1,6 @@
 <div class="row">
 	<h1>Registered Users List</h1>
+	<%= will_paginate @users %>
 	<table class='table table-striped'>
 	  <thead>
 	    <tr>
@@ -7,7 +8,7 @@
 	      <th>Email</th>
 	      <th>Admin</th>
 	      <th>Judge</th>
-	      <tr>Modify</th>
+	      <th>Modify</th>
 	    </tr>
 	  </thead>
 	  <tbody>

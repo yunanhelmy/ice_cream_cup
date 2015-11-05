@@ -5,10 +5,17 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
-    if @user.update(edit_params)
+    if @user.update(user_params)
       redirect_to admin_page_path, notice: 'User has been updated!'
     else
       render :edit
     end
+  end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:judge)
   end
 end
